@@ -30,6 +30,7 @@ async def login_services(
     user: Login,
     db: AsyncSession
 ):
+    print(user.email,user.password)
     check = await db.execute(select(User).where(User.email == user.email))
     result = check.scalar_one_or_none()
     if not result:

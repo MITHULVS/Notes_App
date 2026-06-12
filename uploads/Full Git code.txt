@@ -1,0 +1,55 @@
+Intro:
+
+set up(Create main branch too)
+Folder
+git add .
+git commit -m "Message"
+git status
+git log
+wq to get exit
+clear to wipe out the terminal screen
+
+Time Travel:
+
+git checkout address 
+git checkout branch
+git checkout main(Without head)
+git checkout -f main(full time travel) Use this
+git reset address(permanent)(use this)
+git reset --soft address(stack)(just commit no need to add)
+git reset --hard address(use this too)
+git revert address (c1,c2,c3,c4) to (c1,c2,(c3,c4),c2) make come conflict(Don't use) 
+git stash(hide)
+git stash list
+git stash apply 'stash@{0}'(then use)
+
+Git Hub set up:(Push My Folder)
+
+Create repo(copy 1st and last code in git hub)
+git remote add origin https://github.com/MITHULVS/Learining.git
+git push -u origin main
+
+Branching Main to sub-branch, then main:(Don't create branch in hub)
+
+git branch fix(Creating)(usually current branch)
+git branch new_fix fix(from fix source create branch new_fix)
+git checkout fix(switch to branch)
+
+or 
+
+git checkout -b fix
+
+git push -u origin main(push branch to GitHub)one time the us 
+add the commit
+git push
+
+for merge use GitHub directly or git merge main (from source) 
+
+git pull update change in hub
+
+Team:
+
+git clone git@github.com:friend-username/repo-name.git
+cd repo-name
+
+git conflict: (No need now)

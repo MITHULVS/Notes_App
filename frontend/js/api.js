@@ -55,8 +55,8 @@ class API {
         return this.request('POST', '/user/login', { email, password });
     }
 
-    async signup(email, password) {
-        return this.request('POST', '/user/signup', { email, password });
+    async signup(name,email, password) {
+        return this.request('POST', '/user/signup', { name ,email, password });
     }
 
     async generateOtp(email) {

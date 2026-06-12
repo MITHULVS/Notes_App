@@ -51,14 +51,23 @@ class App {
                     <div id="alert"></div>
                     <form id="signupForm">
                         <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div class="form-group">
                             <label>Email</label>
                             <input type="email" id="email" required>
                         </div>
+
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" id="password" required>
                         </div>
-                        <button type="submit" class="btn-primary auth-button">Signup</button>
+
+                        <button type="submit" class="btn-primary auth-button">
+                            Signup
+                        </button>
                     </form>
                     <div class="auth-link">
                         Already have an account? <a href="#" onclick="app.showLogin()">Login</a>
@@ -270,7 +279,7 @@ class App {
 
         try {
             const response = await api.login(email, password);
-            this.token = response.access_token;
+            this.token = response.token;
             localStorage.setItem('token', this.token);
             this.showDashboard();
             this.showAlert('Login successful', 'success');
@@ -281,11 +290,13 @@ class App {
 
     async handleSignup(e) {
         e.preventDefault();
+
+        const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
         try {
-            await api.signup(email, password);
+            await api.signup(name, email, password);
             this.showAlert('Signup successful! Please login', 'success');
             setTimeout(() => this.showLogin(), 1500);
         } catch (error) {

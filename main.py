@@ -9,6 +9,8 @@ from routes.user_route import router as user
 from database import init_db
 
 import time
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 @asynccontextmanager
@@ -24,6 +26,14 @@ app = FastAPI(
     version="1.0",
     description="This Api provides access to note app",
     lifespan=lifespan
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.middleware("http")

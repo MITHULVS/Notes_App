@@ -44,6 +44,9 @@ async def log_requests(request: Request, call_next):
     print(e-s)
     return response
 
+@app.get("/")
+def root():
+    return {"message": "API is running"}
 
 @app.get("/scalar", include_in_schema=False)
 def scalar():

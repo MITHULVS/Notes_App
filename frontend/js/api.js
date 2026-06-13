@@ -1,6 +1,6 @@
 class API {
     constructor() {
-        this.baseUrl = 'https://notes-app-abc123.onrender.com';
+        this.baseUrl = 'https://notes-app-eegk.onrender.com';
     }
 
     async request(method, endpoint, data = null, token = null) {

@@ -30,7 +30,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://YOUR-FRONTEND.onrender.com"],
+    allow_origins=["https://notes-app-eegk.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
